@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Payment</h1>
+  <form action="payment.php" method="POST">
+    <input type="hidden" name="movie_name" value="" id="movie_name">
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" name="amount" required><br>
+
+    <button type="submit">Make Payment</button>
+  </form>
+
+  <script>
+    // Get movie name from URL parameter and set it to hidden input
+    const urlParams = new URLSearchParams(window.location.search);
+    const movieName = urlParams.get('movie');
+    document.getElementById('movie_name').value = movieName;
+  </script>
+
+</body>
+</html>
